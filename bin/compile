@@ -33,12 +33,13 @@ function indent() {
 }
 
 # config
-VERSION_FIREFOX=57.0.1 # hardcoded version -- update in the next release
+# hardcoded version -- update in the next release
+VERSION_FIREFOX=57.0.1 
+VERSION_GECKODRIVER=0.19.1
 LANG=en-US
 PLATFORM=linux64
 
-VERSION_GECKODRIVER=0.19.1  # hardcoded version -- update in the next release
-
+  
 # Buildpack URL
 ARCHIVE_NAME_FIREFOX=firefox
 ARCHIVE_NAME_GECKODRIVER=geckodriver
