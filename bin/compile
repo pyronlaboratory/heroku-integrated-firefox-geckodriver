@@ -33,13 +33,12 @@ function indent() {
 }
 
 # config
-# hardcoded version -- update in the next release
-VERSION_FIREFOX=57.0.1 
-VERSION_GECKODRIVER=0.19.1
+VERSION_FIREFOX=57.0.1
 LANG=en-US
 PLATFORM=linux64
 
-  
+VERSION_GECKODRIVER=0.19.1
+
 # Buildpack URL
 ARCHIVE_NAME_FIREFOX=firefox
 ARCHIVE_NAME_GECKODRIVER=geckodriver
@@ -48,6 +47,43 @@ FILE_NAME_GECKODRIVER=${ARCHIVE_NAME_GECKODRIVER}-v${VERSION_GECKODRIVER}-${PLAT
 BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION_FIREFOX}-SSL&os=${PLATFORM}&lang=${LANG}"
 BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/download/v${VERSION_GECKODRIVER}/${FILE_NAME_GECKODRIVER}"
 
+# Install correct dependencies according to $STACK
+case "$STACK" in
+  "cedar-14")
+    PACKAGES="libxss1"
+    ;;
+  "heroku-16" | "heroku-18")
+    # the package list is found by using ci:debug then running ldd $GOOGLE_CHROME_BIN | grep not
+    # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
+    PACKAGES="
+      libappindicator1
+      libasound2
+      libatk1.0-0
+      libatk-bridge2.0-0
+      libcairo-gobject2
+      libgconf-2-4
+      libgtk-3-0
+      libice6
+      libnspr4
+      libnss3
+      libsm6
+      libx11-xcb1
+      libxcomposite1
+      libxcursor1
+      libxdamage1
+      libxfixes3
+      libxi6
+      libxinerama1
+      libxrandr2
+      libxss1
+      libxt6
+      libxtst6
+      fonts-liberation
+    "
+    ;;
+  *)
+    error "STACK must be 'cedar-14', 'heroku-16', or 'heroku-18'"
+esac
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
   topic "Purging cache"
