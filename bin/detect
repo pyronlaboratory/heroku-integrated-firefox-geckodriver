@@ -1,5 +1,3 @@
-# detect
-
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
