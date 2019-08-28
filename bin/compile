@@ -33,11 +33,21 @@ function indent() {
 }
 
 # config
+<<<<<<< HEAD
 VERSION_FIREFOX=57.0.1
 LANG=en-US
 PLATFORM=linux64
 
 VERSION_GECKODRIVER=0.19.1
+=======
+# hardcoded as per stable versions available - upgrade in the next release
+VERSION_FIREFOX=57.0.1
+VERSION_GECKODRIVER=0.19.1
+LANG=en-US
+PLATFORM=linux64
+
+
+>>>>>>> a8ea6a25de2d69775d3601e99c2244975ed4e5fe
 
 # Buildpack URL
 ARCHIVE_NAME_FIREFOX=firefox
@@ -47,6 +57,7 @@ FILE_NAME_GECKODRIVER=${ARCHIVE_NAME_GECKODRIVER}-v${VERSION_GECKODRIVER}-${PLAT
 BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION_FIREFOX}-SSL&os=${PLATFORM}&lang=${LANG}"
 BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/download/v${VERSION_GECKODRIVER}/${FILE_NAME_GECKODRIVER}"
 
+<<<<<<< HEAD
 # Install correct dependencies according to $STACK
 case "$STACK" in
   "cedar-14")
@@ -84,6 +95,9 @@ case "$STACK" in
   *)
     error "STACK must be 'cedar-14', 'heroku-16', or 'heroku-18'"
 esac
+=======
+
+>>>>>>> a8ea6a25de2d69775d3601e99c2244975ed4e5fe
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
   topic "Purging cache"
@@ -179,9 +193,12 @@ export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPP
 
 topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
+<<<<<<< HEAD
 
 topic "Installing fonts"
 mkdir -p $BUILD_DIR/.fonts
 ls $FONTS_DIR
 cp $FONTS_DIR/* $BUILD_DIR/.fonts/
 fc-cache -f $BUILD_DIR/.fonts
+=======
+>>>>>>> a8ea6a25de2d69775d3601e99c2244975ed4e5fe
