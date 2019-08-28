@@ -20,16 +20,13 @@ Updating config vars on Heroku CLI:
 
 ```
 FIREFOX_BIN:      /app/vendor/firefox/firefox
-<<<<<<< HEAD
 
 GECKODRIVER_PATH: /app/vendor/geckodriver/geckodriver
 
 LD_LIBRARY_PATH:  /usr/local/lib:/usr/lib:/lib:/app/vendor
 
-=======
-GECKODRIVER_PATH: /app/vendor/geckodriver/geckodriver
-LD_LIBRARY_PATH:  /usr/local/lib:/usr/lib:/lib:/app/vendor
->>>>>>> a8ea6a25de2d69775d3601e99c2244975ed4e5fe
 PATH:             /usr/local/bin:/usr/bin:/bin:/app/vendor/
 
 ```
+
+Go ahead and scrape the universe. Drop a star if you like this small project!
