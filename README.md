@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ronnielivingsince1994/heroku-integrated-firefox-geckodriver.svg?branch=master)](https://travis-ci.org/ronnielivingsince1994/heroku-integrated-firefox-geckodriver)
 [![Coverage Status](https://coveralls.io/repos/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver/badge.svg?branch=master)](https://coveralls.io/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver?branch=master)
 [![Requirements Status](https://requires.io/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This buildpack installs Firefox alongwith mozilla/geckodriver (the Selenium driver for Firefox) in a Heroku slug.
 
