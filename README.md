@@ -12,10 +12,10 @@ Usage:
 Example usage:
 
 ```shell
-$ heroku create --buildpack https://github.com/ronnielivingsince1994/heroku-integrated-firefox-geckodriver
+$ heroku create --buildpack https://github.com/pyronlaboratory/heroku-integrated-firefox-geckodriver
 
 # or if your app is already created:
-$ heroku buildpacks:add https://github.com/ronnielivingsince1994/heroku-integrated-firefox-geckodriver
+$ heroku buildpacks:add https://github.com/pyronlaboratory/heroku-integrated-firefox-geckodriver
 
 $ git push heroku master
 ```
