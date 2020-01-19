@@ -40,6 +40,7 @@ Executable command: `heroku config:set <ENV_VARIABLE>=<ABSOLUTE_PATH>`
 ```shell
 
 $ heroku config:set FIREFOX_BIN=/app/vendor/firefox/firefox
+
 Setting FIREFOX_BIN and restarting python-app... done, v6
 FIREFOX_BIN: '/app/vendor/firefox/firefox'
 
