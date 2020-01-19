@@ -9,7 +9,7 @@ This buildpack installs Firefox alongwith mozilla/geckodriver (the Selenium driv
 Usage:
 -----
 
-Example usage:
+To install and integrate the buildpack with your application running on Heroku's dyno:
 
 ```shell
 $ heroku create --buildpack https://github.com/pyronlaboratory/heroku-integrated-firefox-geckodriver
