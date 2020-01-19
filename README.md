@@ -21,28 +21,27 @@ $ git push heroku master
 ```
 Configurations:
 ---------------
-Update config vars on Heroku CLI as follows:
+Update Heroku's environment variables to store the following path strings. 
 
+```
+FIREFOX_BIN:      /app/vendor/firefox/firefox
 
-`FIREFOX_BIN:      /app/vendor/firefox/firefox`
+GECKODRIVER_PATH: /app/vendor/geckodriver/geckodriver
 
-`GECKODRIVER_PATH: /app/vendor/geckodriver/geckodriver`
+LD_LIBRARY_PATH:  /usr/local/lib:/usr/lib:/lib:/app/vendor
 
-`LD_LIBRARY_PATH:  /usr/local/lib:/usr/lib:/lib:/app/vendor`
+PATH:             /usr/local/bin:/usr/bin:/bin:/app/vendor/
+```
 
-`PATH:             /usr/local/bin:/usr/bin:/bin:/app/vendor/`
-
+These configuration vars can be updated via Heroku CLI as follows:
 
 Executable command: `heroku config:set <ENV_VARIABLE>=<ABSOLUTE_PATH>`
 
-for instance
 ```shell
-...
-...
+
 $ heroku config:set FIREFOX_BIN=/app/vendor/firefox/firefox
-Setting FIREFOX_BIN and restarting ⬢ nodejs-app... done, v6
+Setting FIREFOX_BIN and restarting python-app... done, v6
 FIREFOX_BIN: '/app/vendor/firefox/firefox'
-...
 
 ```
 
