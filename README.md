@@ -23,15 +23,15 @@ Configurations:
 ---------------
 Update Heroku's environment variables to store the following path strings. 
 
-```
-**FIREFOX_BIN**:      /app/vendor/firefox/firefox
 
-GECKODRIVER_PATH: /app/vendor/geckodriver/geckodriver
+**FIREFOX_BIN**:      */app/vendor/firefox/firefox*
 
-LD_LIBRARY_PATH:  /usr/local/lib:/usr/lib:/lib:/app/vendor
+**GECKODRIVER_PATH**: */app/vendor/geckodriver/geckodriver*
 
-PATH:             /usr/local/bin:/usr/bin:/bin:/app/vendor/
-```
+**LD_LIBRARY_PATH**:  */usr/local/lib:/usr/lib:/lib:/app/vendor*
+
+**PATH**:             */usr/local/bin:/usr/bin:/bin:/app/vendor/*
+
 
 These configuration vars can be updated via Heroku CLI as follows:
 
