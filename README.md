@@ -1,7 +1,7 @@
 # heroku-integrated-firefox-geckodriver
 
 [![Build Status](https://travis-ci.org/pyronlaboratory/heroku-integrated-firefox-geckodriver.svg?branch=master)](https://travis-ci.org/pyronlaboratory/heroku-integrated-firefox-geckodriver)
-[![Requirements Status](https://requires.io/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/ronnielivingsince1994/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
+[![Requirements Status](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This buildpack installs Firefox alongwith mozilla/geckodriver (the Selenium driver for Firefox) in a Heroku slug.
@@ -22,13 +22,16 @@ $ git push heroku master
 Configurations:
 ---------------
 Update Heroku's environment variables to store the following path strings. 
+                                
+  
+**FIREFOX_BIN**: */app/vendor/firefox/firefox*
 
-ENV_                                    | ABSOLUTE PATH
--------------------------------------   |--------------------------------------------
-FIREFOX_BIN                             | */app/vendor/firefox/firefox*
-GECKODRIVER_PATH                        | */app/vendor/geckodriver/geckodriver*
-LD_LIBRARY_PATH                         | */usr/local/lib:/usr/lib:/lib:/app/vendor*
-PATH**                                  | */usr/local/bin:/usr/bin:/bin:/app/vendor/*
+**GECKODRIVER_PATH**: */app/vendor/geckodriver/geckodriver*
+
+**LD_LIBRARY_PATH**: */usr/local/lib:/usr/lib:/lib:/app/vendor*
+
+**PATH**: */usr/local/bin:/usr/bin:/bin:/app/vendor/*
+
                 
 
 These configuration vars can be updated via Heroku CLI as follows:
