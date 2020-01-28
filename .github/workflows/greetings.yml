@@ -10,4 +10,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Thank you for using heroku-integrated-firefox-geckodriver. Preliminary examination of your issue is underway'' first issue'
-        pr-message: 'Thank you for the pr. Reviewing underway..'' first pr'
+        pr-message: 'Thank you for the Pull Request. Review underway'' first pr'
