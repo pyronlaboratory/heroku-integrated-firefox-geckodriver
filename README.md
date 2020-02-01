@@ -4,7 +4,7 @@
 [![Requirements Status](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This buildpack installs Firefox alongwith mozilla/geckodriver (the Selenium driver for Firefox) in a Heroku slug.
+Buildpack enables your client code - running in any high-level language application such as Python, Ruby or Node.js - to access Firefox along with Geckodriver (the Selenium driver for Firefox) in a Heroku slug and enable the drivers to perform automated operations defined the source code.
 
 Usage:
 -----
