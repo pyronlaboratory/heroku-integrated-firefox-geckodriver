@@ -23,7 +23,7 @@ $ heroku buildpacks:add https://github.com/pyronlaboratory/heroku-integrated-fir
 $ git push heroku master
 ```
 Configurations:
----------------
+-----
 Update Heroku's environment variables to store the following path strings. 
                                 
   
