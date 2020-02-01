@@ -7,9 +7,9 @@
 > Available for download at [The Heroku Elements Marketplace](https://elements.heroku.com/). Search `heroku-integrated-firefox-geckodriver` on the official Heroku Elements Marketplace to access the buildpack.
 
 
-Buildpack `heroku-integrated-firefox-geckodriver` enables your application or client code - running in any high-level language such as *Python, Ruby or Node.js* - to access **Firefox** along with **Geckodriver** (the Selenium driver for Firefox) in a Heroku slug and enables the driver objects to perform automated operations defined the source code.
+Buildpack `heroku-integrated-firefox-geckodriver` enables your application or client code - running in any high-level language such as *Python, Ruby or Node.js* - to access **Firefox** along with **Geckodriver** (the Selenium driver for Firefox) in a Heroku slug and enables the driver objects to perform automated operations defined in the source code.
 
-Usage:
+Installation:
 -----
 
 To install and integrate the buildpack with your application running on Heroku's dyno:
