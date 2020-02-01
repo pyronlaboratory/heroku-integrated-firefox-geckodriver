@@ -4,6 +4,7 @@
 [![Requirements Status](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
 > Available for download at [The Heroku Elements Marketplace](https://elements.heroku.com/). Search `heroku-integrated-firefox-geckodriver` on the official Heroku Elements Marketplace to access the buildpack.
 
 
@@ -22,8 +23,10 @@ $ heroku buildpacks:add https://github.com/pyronlaboratory/heroku-integrated-fir
 
 $ git push heroku master
 ```
+
 Configurations:
 -----
+
 Update Heroku's environment variables to store the following path strings. 
                                 
   
