@@ -56,4 +56,4 @@ FIREFOX_BIN: '/app/vendor/firefox/firefox'
 
 Go ahead and scrape the universe. Drop a star if you like this small project!
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1VEXA)
+[![ko-fi](ko-fi.png)](https://ko-fi.com/F1F1VEXA)
