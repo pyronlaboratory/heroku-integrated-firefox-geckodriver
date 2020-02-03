@@ -56,4 +56,4 @@ FIREFOX_BIN: '/app/vendor/firefox/firefox'
 
 Go ahead and scrape the universe. Drop a star if you like this small project!
 
-[![ko-fi](https://ucc51d32fd46bfbb4d3f4c7a9a3a.previews.dropboxusercontent.com/p/pdf_img/AAsPd8cjapw5AOvrc8C9RWabxLHG9K0FZCAFdyFbtg8ZRtlcjN-TwykKdo6a3YAyXKuSNjXhTv3VJhoACO-WcZw8gEeWBOsrBxTVVLdfEVEon09bsYCmmHRZL_6GJuFxiF0_Zh8O3xpx1b7AOqD2pb1APSvPwDW6cL1xdgq54Xt3bcKkxvE7u2N9fmPYp_lE3NizblboiO6l6CfcsuxgvFTlTFaw-9Xh0j2AH4qeBuv2YAc9frjEFMDKa8McObiboj9NqX7MpKsNNGQZnzfzqC9MtNXtQMHlB3V17nnAIvpeQefLvOapEwPiRM-cSJ3QWr6E6SChtSX-V__yUVg_7MxyF-Kasi0sfjvNE3DBtrBJ29PVTbUzP2FwR_5PllJ9aRNKoet1E0pb5-cS0d78JGE_IP5alI8s8ojcQQjXjYvO_Q/p.png?page=0&scale_percent=15)](https://ko-fi.com/F1F1VEXA)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1VEXA)
