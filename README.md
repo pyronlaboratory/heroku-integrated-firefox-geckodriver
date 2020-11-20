@@ -56,4 +56,4 @@ FIREFOX_BIN: '/app/vendor/firefox/firefox'
 
 Go ahead and scrape the universe. Drop a star if you like this small project!
 
-[![ko-fi](ko-fi.png)](https://ko-fi.com/F1F1VEXA)
+<a href="https://ko-fi.com/F1F1VEXA" target="_blank"><img src="ko-fi.png" alt="Buy me a Ko-fi, will ya?!" width="200"/></a>
