@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-# fail fast
+# Fail fast
 set -e
 
-# debug
+# Debug
 # set -x
 
-# parse and derive params
+# Parse and derive params
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
@@ -32,14 +32,13 @@ function indent() {
   esac
 }
 
-# config
-# hardcoded as per stable versions available - upgrade in the next release
-VERSION_FIREFOX='72.0.1'
-VERSION_GECKODRIVER='0.28.0'
+# Config
+# Hardcoded available stable versions
+# Use it to manually update the version as per https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html
+VERSION_FIREFOX=82.0.3
+VERSION_GECKODRIVER=0.28.0
 LANG=en-US
 PLATFORM=linux64
-
-
 
 # Buildpack URL
 ARCHIVE_NAME_FIREFOX=firefox
@@ -49,7 +48,41 @@ FILE_NAME_GECKODRIVER=${ARCHIVE_NAME_GECKODRIVER}-v${VERSION_GECKODRIVER}-${PLAT
 BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION_FIREFOX}-SSL&os=${PLATFORM}&lang=${LANG}"
 BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/download/v${VERSION_GECKODRIVER}/${FILE_NAME_GECKODRIVER}"
 
-
+# Install correct dependencies according to $STACK	
+case "$STACK" in	
+  "cedar-14")	
+    PACKAGES="libxss1"	
+    ;;	
+  "heroku-16" | "heroku-18")	
+    PACKAGES="	
+      libappindicator1	
+      libasound2	
+      libatk1.0-0	
+      libatk-bridge2.0-0	
+      libcairo-gobject2	
+      libgconf-2-4	
+      libgtk-3-0	
+      libice6	
+      libnspr4	
+      libnss3	
+      libsm6	
+      libx11-xcb1	
+      libxcomposite1	
+      libxcursor1	
+      libxdamage1	
+      libxfixes3	
+      libxi6	
+      libxinerama1	
+      libxrandr2	
+      libxss1	
+      libxt6	
+      libxtst6	
+      fonts-liberation	
+    "	
+    ;	
+  *)	
+    error "Heroku stack must be 'cedar-14', 'heroku-16', or 'heroku-18'"	
+esac
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
   topic "Purging cache"
@@ -140,7 +173,7 @@ export CPPPATH="$INCLUDE_PATH"
 export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 export TMPDIR="\$BUILD_DIR/tmp"
 
-#give environment to later buildpacks
+#Give environment to later buildpacks
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 topic "Rewrite package-config files"
