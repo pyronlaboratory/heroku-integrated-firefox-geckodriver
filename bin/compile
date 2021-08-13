@@ -1,6 +1,28 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+echo "X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fICAgX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX1
+9fX19fX19fX19fX19fX19fX19fX19fX19fX19fXw0KNyAgICAgNzcg
+IDcgIDc3ICBfICA3NyAgICAgNzcgICAgIDc3ICA3ICAgNyAgXyAgNz
+cgIF8gIDc3ICAgICA3NyAgXyAgNzcgIF8gIDc3ICAgICAgNzcgICAg
+IDc3ICBfICA3NyAgNyAgNw0KfCAgLSAgfHwgICEgIHx8ICAgIF98fC
+AgNyAgfHwgIF8gIHx8ICB8ICAgfCAgXyAgfHwgICBfX3x8ICA3ICB8
+fCAgICBffHwgIF8gIHwhX18gIF9fIXwgIDcgIHx8ICAgIF98fCAgIS
+AgfA0KfCAgX19fISFfICAgXyF8ICBfIFwgfCAgfCAgfHwgIDcgIHx8
+ICAhX19ffCAgNyAgfHwgIF8gIHx8ICB8ICB8fCAgXyBcIHwgIDcgIH
+wgIDcgIDcgIHwgIHwgIHx8ICBfIFwgIV8gICBfIQ0KfCAgNyAgICA3
+ICAgNyB8ICA3ICB8fCAgISAgfHwgIHwgIHx8ICAgICA3fCAgfCAgfH
+wgIDcgIHx8ICAhICB8fCAgNyAgfHwgIHwgIHwgIHwgIHwgIHwgICEg
+IHx8ICA3ICB8IDcgICA3IA0KIV9fISAgICAhX19fISAhX18hX18hIV
+9fX19fISFfXyFfXyEhX19fX18hIV9fIV9fISFfX19fXyEhX19fX18h
+IV9fIV9fISFfXyFfXyEgICFfXyEgICFfX19fXyEhX18hX18hICFfX1
+8hIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA==" |base64 -d
+
+echo -en '\n'
+
 # Fail fast
 set -e
 
@@ -13,7 +35,6 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
-FONTS_DIR=`cd "$LP_DIR/fonts"; pwd`
 
 function error() {
   echo " !     $*" >&2
@@ -50,10 +71,7 @@ BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/d
 
 # Install correct dependencies according to $STACK	
 case "$STACK" in	
-  "cedar-14")	
-    PACKAGES="libxss1"	
-    ;;	
-  "heroku-16" | "heroku-18")	
+  "heroku-16" | "heroku-18" | "heroku-20")	
     PACKAGES="	
       libappindicator1	
       libasound2	
@@ -78,10 +96,10 @@ case "$STACK" in
       libxt6	
       libxtst6	
       fonts-liberation	
-    "	
-    ;	
+    "
+    ;;	
   *)	
-    error "Heroku stack must be 'cedar-14', 'heroku-16', or 'heroku-18'"	
+    error "Heroku stack must be 'heroku-16', heroku-18 or 'heroku-20'"	
 esac
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
@@ -114,7 +132,7 @@ for PACKAGE in $PACKAGES; do
     curl -s -L -z $PACKAGE_FILE -o $PACKAGE_FILE $PACKAGE 2>&1 | indent
   else
     topic "Fetching .debs for $PACKAGE"
-    apt-get $APT_OPTIONS -y --force-yes -d install --reinstall $PACKAGE | indent
+    apt-get $APT_OPTIONS -y -d install --reinstall $PACKAGE | indent
   fi
 done
 
