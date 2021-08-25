@@ -2,7 +2,6 @@
 # heroku-integrated-firefox-geckodriver
 
 [![Build Status](https://travis-ci.org/pyronlaboratory/heroku-integrated-firefox-geckodriver.svg?branch=master)](https://travis-ci.org/pyronlaboratory/heroku-integrated-firefox-geckodriver)
-[![Requirements Status](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements.svg?branch=master)](https://requires.io/github/pyronlaboratory/heroku-integrated-firefox-geckodriver/requirements/?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Now supports Heroku-20, and legacy versions Heroku-16 and Heroku-18.
