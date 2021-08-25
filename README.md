@@ -193,4 +193,4 @@ const  options = new  Options()
 
 Go ahead and scrape the universe. Drop a star if you like this small project!
 
-<a href="https://ko-fi.com/F1F1VEXA" target="_blank"><img src="ko-fi.png" alt="Buy me a Ko-fi, will ya?!" width="200"/></a>
+<a href="https://ko-fi.com/F1F1VEXA" target="_blank"><img src="https://prototypr-media.sfo2.digitaloceanspaces.com/wp-content/uploads/2020/09/06075602/C91A1CCC-AF29-432B-81F9-F2BA1220AFA7-1024x512-1.png" alt="Buy me a Ko-fi, will ya?!"/></a>
