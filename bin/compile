@@ -57,7 +57,7 @@ function indent() {
 # Hardcoded available stable versions
 # Use it to manually update the version as per https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html
 VERSION_FIREFOX=82.0.3
-VERSION_GECKODRIVER=0.28.0
+VERSION_GECKODRIVER=0.30.0
 LANG=en-US
 PLATFORM=linux64
 
